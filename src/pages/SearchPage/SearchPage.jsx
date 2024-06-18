@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import NavBar from "../../Components/NavBar/NavBar";
 import Search from "../../Components/Search/Search";
@@ -11,8 +12,6 @@ import hospitalImg from "../../assets/images/hospital.png";
 import { FaThumbsUp } from "react-icons/fa";
 import axios from "axios";
 import BookingSlot from "../../Components/BookingSlot/BookingSlot";
-import Booking from "../Booking/Booking";
-import { Link, useLocation } from 'react-router-dom';
 
 const SearchPage = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -24,6 +23,7 @@ const SearchPage = () => {
   const state = queryParams.get("state");
   const city = queryParams.get("city");
 
+  console.log(selectedBooking)
   useEffect(() => {
     axios
       .get(`https://meddata-backend.onrender.com/data?state=${state}&city=${city}`)
@@ -106,23 +106,26 @@ const SearchPage = () => {
           <img src={freeAppImg} alt="Free Appointment" />
         </div>
       </div>
-      {selectedBooking && (
-        <Link to='/booking'>
-          <Booking
-            address={selectedBooking.center["Address"]}
-            hospitalName={selectedBooking.center["Hospital Name"]}
-            city={selectedBooking.center["City"]}
-            state={selectedBooking.center["State"]}
-            zipCode={selectedBooking.center["ZIP Code"]}
-            selectedDate={selectedBooking.date}
-            selectedTime={selectedBooking.time}
-          />
-        </Link>
-      )}
       <div className={styles.askedQue}>
         <AskedQuestions />
       </div>
       <Footer />
+      {selectedBooking && (
+        <Link
+          to="/booking"
+          state={{
+            address: selectedBooking.center["Address"],
+            hospitalName: selectedBooking.center["Hospital Name"],
+            city: selectedBooking.center["City"],
+            state: selectedBooking.center["State"],
+            zipCode: selectedBooking.center["ZIP Code"],
+            selectedDate: selectedBooking.date,
+            selectedTime: selectedBooking.time,
+          }}
+        >
+          <button>Go to Booking</button>
+        </Link>
+      )}
     </div>
   );
 };
