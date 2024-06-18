@@ -1,0 +1,189 @@
+.booking-interface {
+  text-align: center;
+  padding: 20px;
+}
+
+.date-button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.date-button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.date-button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.time-slot-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.time-slot {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid var(--blueColor);
+  border-radius: 4px;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: center;
+  background-color: transparent;
+  color: var(--blueColor);
+}
+.time-slot:hover{
+  background-color: var(--white)!important;
+}
+
+.time-slot:hover {
+  background-color: #f0f0f0;
+}
+
+/* Carousel Arrow Styling */
+.carousel {
+  margin-bottom: 50px !important;
+}
+.carousel .control-arrow {
+  background: none;
+  border: none;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .9!important;
+}
+
+.carousel .control-next.control-arrow,
+.carousel .control-prev.control-arrow {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carousel .control-next.control-arrow {
+
+  background-image: url('../../assets/images/next.png');
+  z-index: 999999;
+  position: relative;
+}
+
+.carousel .control-prev.control-arrow {
+
+  background-image: url('../../assets/images/prev.png');
+  z-index: 999999;
+  position: relative;
+}
+
+.carousel .control-next.control-arrow:before,
+.carousel .control-prev.control-arrow:before {
+  content: '';
+  border: none;
+}
+
+.carousel .control-dots, .carousel-status{
+  display: none;
+}
+.carousel.carousel-slider{
+  display: flex;
+  margin-top: 20px;
+}
+
+/* Remove background color on hover */
+.carousel.carousel-slider .control-arrow:hover {
+  background: none; /* Remove the background */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.carousel.carousel-slider .control-next.control-arrow:hover {
+  background-image: url('../../assets/images/next.png');
+}
+
+.carousel.carousel-slider .control-prev.control-arrow:hover {
+  background-image: url('../../assets/images/prev.png');
+}
+.carousel .slider-wrapper{
+  margin: 0px;
+  border-bottom: 3px solid #f4f4f4;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider{
+  width: 200px;
+  margin: 20px 0px;
+}
+.dateButtonContainer {
+  width: 200px!important;
+  margin: -8px 20px;
+}
+
+button.dateButton {
+  border: none;
+  background: none;
+  font-family: Poppins;
+  font-size: 16px;
+  line-height: 22.4px;
+  text-align: center;
+}
+button.dateButton p{
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: center;
+  color:#01A400;
+  padding: 0px;
+}
+.carousel-root > div > div > ul > li:nth-child(2) > div > button{
+  font-weight: 700;
+}
+
+/* .dateButtonContainer:hover {
+  border-bottom: 3px solid var(--blueColor);
+} */
+
+.carousel-root > div > div > ul > li:nth-child(9){
+  display: none;
+}
+
+.timeSlot{
+  display: flex;
+  border-bottom: 1px solid #F0F0F5;
+  width: 800px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.timeSlot h2{
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: #414146;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.time-slot-list > div:nth-child(3){
+  border: none;
+}

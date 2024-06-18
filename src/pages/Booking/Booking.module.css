@@ -1,0 +1,189 @@
+.navBarBg{
+    background-color:var(--white);
+}
+.bookingBg{
+    background-color: var(--blueColor);
+    padding: 20px 135px;
+    border-radius: 0px 0px 16px 16px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.bookingBg h3{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 45.96px;
+    text-align: center;
+    font-family: 'Poppins';
+    color: var(--white);
+}
+.bookingBg .inner{
+    background-color: var(--white);
+    padding: 27px 25px 80px 27px;
+    border-radius: 15px;
+}
+
+
+.bookingMain{
+    background: linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%);
+    
+}
+
+.bookingBody{
+    padding: 120px 135px;
+    display: flex;
+    justify-content: space-between;
+} 
+.askedQue{
+    background-color: var(--white);
+}
+.bookingData{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+
+}
+.bookingDataInner{
+    display: flex;
+}
+.bookingData img{
+    width: 124px;
+    height: 124px;
+    margin-right: 30px;
+}
+.bookingLeft .middle{
+    padding-right: 40px;
+    padding-top: 40px;
+}
+
+.bookingLeft .middle h4{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: left;
+    color: var(--blueColor);
+
+}
+
+.bookingLeft .middle h5{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19.6px;
+    text-align: left;
+    color: #414146;
+    padding-bottom: 0px;
+    padding-top: 15px;
+}
+.bookingLeft .middle p{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+    color:#414146;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.bookingLeft .middle h6{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+    color: #414146;
+}
+.bookingLeft .middle span{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19.6px;
+    text-align: left;
+    color: #02A401;
+    padding-right: 0px;
+}
+.bookingLeft .middle strike{
+    color:#787887;
+    padding: 0px 5px;
+}
+
+.bookingLeft .middle hr{
+   border: 0.3px solid #e8e8f0;
+   margin: 10px 0px;
+}
+.bookingLeft .middle .thumb{
+    background: #00A500;
+    width: 45px;
+    padding: 3px 0px;
+    color: var(--white);
+    text-align: center;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.bookingLeft h3{
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    color:#000;
+}
+
+.bookingLeft p{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color:#787887;
+    padding: 10px 0px 30px 0px;
+}
+.bookingLeft span{
+    color: #000;
+    padding-right: 20px;
+}
+.bookingBody .bookingData{
+    background-color: var(--white);
+    padding: 24px;
+    border-radius: 15px;
+}
+
+.hospitalBg img{
+    width: 80;
+    height: 80px;
+}
+.bookingLeft .right{
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+    padding-top: 40px;
+}
+
+
+.time{
+    border: 1px solid var(--blueColor);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: var(--blueColor);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: center;
+    margin-right: 30px;
+    cursor: pointer;
+    width: 60px;
+}
+
+.time2{
+    border: 1px solid #007100;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #007100;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: center;
+    margin-right: 30px;
+    cursor: pointer;
+    width: 90px;
+}

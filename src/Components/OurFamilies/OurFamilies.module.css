@@ -1,0 +1,131 @@
+.familiesMain{
+    padding: 50px 135px;
+    background: linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%);
+    display: flex;
+    
+}
+.familiesMain div{
+    flex: 1;
+}
+.familiesLeft{
+    margin-right: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.familiesLeft h3{
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 67px;
+    text-align: left;
+    color: var(--darkBlueColor);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+}
+.familiesLeft p{
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 40.8px;
+    text-align: left;
+    color: #77829D;
+}
+
+.familiesLeft .caring{
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    color: var(--blueColor);
+    
+}
+.familiesRight{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.familiesRight .rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 242.5px;
+    height: 304px;
+    border-radius: 8px;
+    flex:1 0 45%;
+    margin: 10px;
+    box-shadow: 0px 15px 45px -5px #00000012;
+
+    
+}
+.familiesRight .rating:nth-child(2){
+    margin-top: 50px;
+}
+.familiesRight .rating:nth-child(3){
+    margin-top: -30px;
+}
+.familiesRight .rating .iconImg{
+    background-color: #EBF7FF;
+    font-size: 50px;
+    padding: 15px;
+    width: 100px;
+    height: 100px;
+    color: var(--blueColor); 
+    border-radius: 100%;
+}
+
+.familiesRight .rating .iconImg2{
+    background-color: #FFF2F0;
+    font-size: 50px;
+    padding: 15px;
+    width: 100px;
+    height: 100px;
+    color: #FF684C; 
+    border-radius: 100%;
+}
+
+.familiesRight .rating .iconImg3{
+    background-color: #FFF7E6;
+    font-size: 50px;
+    padding: 15px;
+    width: 100px;
+    height: 100px;
+    color: #FFB200; 
+    border-radius: 100%;
+}
+
+.familiesRight .rating .iconImg4{
+    background-color: #EBFAF1;
+    font-size: 50px;
+    padding: 15px;
+    width: 100px;
+    height: 100px;
+    color: #4CD080; 
+    border-radius: 100%;
+}
+
+
+.familiesRight .rating h4{
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: center;
+    color: var(--darkBlueColor);
+    margin-top: 10px;
+    margin-bottom:20px;
+
+}
+
+.familiesRight .rating p{
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color:#77829D
+}

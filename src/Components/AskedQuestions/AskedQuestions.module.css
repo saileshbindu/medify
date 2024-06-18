@@ -1,0 +1,48 @@
+.askedMain{
+    padding: 30px 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.askedMain p{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: center;
+    color:var(--blueColor)    
+}
+.askedMain h2{
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 67px;
+    text-align: center;
+    color: var(--darkBlueColor);    
+}
+.innerAsk{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex:1 0 45%;
+}
+
+  
+.title{
+    display: flex;
+    padding-top: 40px;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.title span{
+    color: var(--blueColor);
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.innerAsk > div:nth-child(2) > div:nth-child(1) > div {
+    padding-top: 0px;
+}
