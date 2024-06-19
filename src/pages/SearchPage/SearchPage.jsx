@@ -37,16 +37,27 @@ const SearchPage = () => {
   };
 
   const handleBooking = (center, date, time) => {
-    setSelectedBooking({ center, date, time });
-    localStorage.setItem("selectedBooking", JSON.stringify({ center, date, time }));
-    setOpenIndex(null)
+    const booking = { center, date, time };
+    setSelectedBooking(booking);
+
+    let prevBookings = localStorage.getItem("selectedBooking");
+    prevBookings = prevBookings ? JSON.parse(prevBookings) : [];
+    if (!Array.isArray(prevBookings)) {
+      prevBookings = [];
+    }
+
+    prevBookings.push(booking);
+    localStorage.setItem("selectedBooking", JSON.stringify(prevBookings));
+    setOpenIndex(null);
   };
 
   useEffect(() => {
     const storedBooking = localStorage.getItem("selectedBooking");
     if (storedBooking) {
-      setSelectedBooking(JSON.parse(storedBooking));
-      
+      const bookings = JSON.parse(storedBooking);
+      if (Array.isArray(bookings) && bookings.length > 0) {
+        setSelectedBooking(bookings[bookings.length - 1]);
+      }
     }
   }, []);
 
@@ -119,7 +130,7 @@ const SearchPage = () => {
         <AskedQuestions />
       </div>
       <Footer />
-      {selectedBooking && (
+      {selectedBooking && selectedBooking.center && (
         <Link
           to="/booking"
           state={{
@@ -132,7 +143,7 @@ const SearchPage = () => {
             selectedTime: selectedBooking.time,
           }}
         >
-          <button>Go to Booking</button>
+         
         </Link>
       )}
     </div>

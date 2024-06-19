@@ -23,7 +23,6 @@ const Booking = ({ slot, selectedDate, address, hospitalName, city, state, zipCo
   }, [location.state, location]);
 
   console.log(selectedBooking);
-  console.log(slot, selectedDate, address, hospitalName, city, state, zipCode);
 
   return (
     <div className={styles.bookingMain}>
@@ -50,7 +49,7 @@ const Booking = ({ slot, selectedDate, address, hospitalName, city, state, zipCo
                   <p>{booking.center["City"]}, {booking.center["State"]}, {booking.center["ZIP Code"]}</p>
                   <hr />
                   <div className={styles.thumb}>
-                    <FaThumbsUp /> 5
+                    <FaThumbsUp /> {booking.center["Hospital overall rating"]}
                   </div>
                 </div>
                 <div className={styles.right}>
@@ -58,7 +57,11 @@ const Booking = ({ slot, selectedDate, address, hospitalName, city, state, zipCo
                     {booking.time}
                   </div>
                   <div className={styles.time2}>
-                    {booking.date}
+                  {new Date(booking.date).toLocaleDateString('en-GB', {
+                      day: '2-digit',
+                      month: 'short',
+                      year: 'numeric'
+                    })}
                   </div>
                 </div>
               </div>
