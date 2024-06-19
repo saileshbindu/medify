@@ -23,7 +23,6 @@ const SearchPage = () => {
   const state = queryParams.get("state");
   const city = queryParams.get("city");
 
-  console.log(selectedBooking)
   useEffect(() => {
     axios
       .get(`https://meddata-backend.onrender.com/data?state=${state}&city=${city}`)
@@ -39,7 +38,17 @@ const SearchPage = () => {
 
   const handleBooking = (center, date, time) => {
     setSelectedBooking({ center, date, time });
+    localStorage.setItem("selectedBooking", JSON.stringify({ center, date, time }));
+    setOpenIndex(null)
   };
+
+  useEffect(() => {
+    const storedBooking = localStorage.getItem("selectedBooking");
+    if (storedBooking) {
+      setSelectedBooking(JSON.parse(storedBooking));
+      
+    }
+  }, []);
 
   return (
     <div className={styles.searchMain}>

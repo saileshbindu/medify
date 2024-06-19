@@ -13,6 +13,10 @@
     background: transparent;
     border-radius: 8px;
     border: 1px;
+    color: #9CA3AF;
+}
+.searchInput select:focus-visible{
+    outline: none;
 }
 .searchInput .iconFa {
     padding: 12px;

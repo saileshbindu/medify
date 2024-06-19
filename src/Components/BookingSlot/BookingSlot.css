@@ -16,12 +16,14 @@
   width: 100px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-.date-button.active {
-  background-color: #4CAF50;
-  color: white;
+.date-button{
+  font-weight: bold;
 }
+
+
 
 .time-slot-list {
   display: flex;
@@ -123,13 +125,19 @@
 }
 .carousel .slider-wrapper{
   margin: 0px;
-  border-bottom: 3px solid #f4f4f4;
 }
 
 .carousel .slider-wrapper.axis-horizontal .slider{
   width: 200px;
   margin: 20px 0px;
 }
+
+
+.carousel .slide{
+  border-bottom: 3px solid #f4f4f4;
+    padding-bottom: 6px;
+}
+
 .dateButtonContainer {
   width: 200px!important;
   margin: -8px 20px;
@@ -152,14 +160,18 @@ button.dateButton p{
   color:#01A400;
   padding: 0px;
 }
-.carousel-root > div > div > ul > li:nth-child(2) > div > button{
-  font-weight: 700;
-}
 
-/* .dateButtonContainer:hover {
+
+.dateButtonContainer button:hover{
+  font-weight: bold;
+  cursor: pointer;
+} 
+
+button.dateButton.active{
+  font-weight: bold!important;
   border-bottom: 3px solid var(--blueColor);
-} */
-
+  padding-bottom: 10px;
+}
 .carousel-root > div > div > ul > li:nth-child(9){
   display: none;
 }

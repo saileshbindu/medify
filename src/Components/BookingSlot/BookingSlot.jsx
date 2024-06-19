@@ -51,6 +51,7 @@ const BookingSlot = ({ center, onBook }) => {
 
   const handleBooking = (time) => {
     onBook(center, selectedDate, time);
+    
   };
 
   return (
