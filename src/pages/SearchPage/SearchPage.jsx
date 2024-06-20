@@ -12,6 +12,8 @@ import hospitalImg from "../../assets/images/hospital.png";
 import { FaThumbsUp } from "react-icons/fa";
 import axios from "axios";
 import BookingSlot from "../../Components/BookingSlot/BookingSlot";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SearchPage = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -34,6 +36,7 @@ const SearchPage = () => {
 
   const bookingFun = (index) => {
     setOpenIndex(openIndex === index ? null : index);
+
   };
 
   const handleBooking = (center, date, time) => {
@@ -49,6 +52,18 @@ const SearchPage = () => {
     prevBookings.push(booking);
     localStorage.setItem("selectedBooking", JSON.stringify(prevBookings));
     setOpenIndex(null);
+
+
+    toast.success(`Booking Successfully`, {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   };
 
   useEffect(() => {
@@ -146,6 +161,7 @@ const SearchPage = () => {
          
         </Link>
       )}
+      <ToastContainer />
     </div>
   );
 };

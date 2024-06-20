@@ -6,11 +6,12 @@ import NavBar from "../../Components/NavBar/NavBar";
 import hospitalImg from '../../assets/images/hospital.png';
 import { FaThumbsUp } from "react-icons/fa6";
 import freeAppImg from '../../assets/images/freeAppointment.png';
-import HospitalSearch from '../../Components/HospitalSearch/HospitalSearch';
+import { IoSearchOutline } from "react-icons/io5";
 import Footer from '../../Components/Footer/Footer';
 
-const Booking = ({ slot, selectedDate, address, hospitalName, city, state, zipCode }) => {
+const Booking = () => {
   const [selectedBooking, setSelectedBooking] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const location = useLocation();
 
   useEffect(() => {
@@ -22,7 +23,13 @@ const Booking = ({ slot, selectedDate, address, hospitalName, city, state, zipCo
     }
   }, [location.state, location]);
 
-  console.log(selectedBooking);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const filteredBookings = selectedBooking.filter((booking) => {
+      return booking.center["Hospital Name"].toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setSelectedBooking(filteredBookings);
+  };
 
   return (
     <div className={styles.bookingMain}>
@@ -33,13 +40,24 @@ const Booking = ({ slot, selectedDate, address, hospitalName, city, state, zipCo
       <div className={styles.bookingBg}>
         <h3>My Bookings</h3>
         <div className={styles.inner}>
-          <HospitalSearch />
+          <form className={styles.hospitalSearchMain} onSubmit={handleSearch}>
+            <div className={styles.hospitalSearchInput}>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search By Hospital"
+              />
+            </div>
+            <button className='bluebtn' type="submit">
+              <IoSearchOutline className={styles.iconFa2} /> Search
+            </button>
+          </form>
         </div>
       </div>
       <div className={styles.bookingBody}>
         <div className={styles.bookingLeft}>
-        
-          {selectedBooking.length > 0 ? selectedBooking.map((booking, index) => (
+        {selectedBooking.length > 0 ? selectedBooking.map((booking, index) => (
             <div className={styles.bookingData} key={index}>
               <div className={styles.bookingDataInner}>
                 <img src={hospitalImg} alt="Hospital" />
@@ -57,7 +75,7 @@ const Booking = ({ slot, selectedDate, address, hospitalName, city, state, zipCo
                     {booking.time}
                   </div>
                   <div className={styles.time2}>
-                  {new Date(booking.date).toLocaleDateString('en-GB', {
+                    {new Date(booking.date).toLocaleDateString('en-GB', {
                       day: '2-digit',
                       month: 'short',
                       year: 'numeric'
